@@ -1,0 +1,155 @@
+/* CSS (styles.css) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #cc0000; /* Kırmızı arka plan rengi */
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+header h1 {
+    margin-bottom: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links li a:hover {
+    text-decoration: underline;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+/* Duyurular kısmı */
+aside.duyurular {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    height: calc(100vh - 80px);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+aside.duyurular h2 {
+    color: #cc0000;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+aside.duyurular .duyuru-listesi {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+aside.duyurular .duyuru-listesi ul {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    animation: scroll 15s linear infinite;
+}
+
+aside.duyurular .duyuru-listesi li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+    color: #333;
+}
+
+/* Duyuruların yukarıdan aşağıya akması */
+@keyframes scroll {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: -100%;
+    }
+}
+
+main {
+    margin-left: 260px;
+    padding: 2rem;
+}
+
+section {
+    padding: 2rem;
+    margin: 1rem 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2, section h3 {
+    color: #003366;
+    margin-bottom: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #003366;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-active .nav-links {
+        display: flex;
+    }
+
+    .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px;
+        transition: all 0.3s ease;
+    }
+}
